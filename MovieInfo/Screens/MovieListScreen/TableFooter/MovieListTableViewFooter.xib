@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="MovieListTableViewFooter" id="iN0-l3-epB" customClass="MovieListTableViewFooter" customModule="MovieInfo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="384" height="90"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHB-qP-3Bt">
+                    <rect key="frame" x="20" y="27" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="uHB-qP-3Bt" secondAttribute="height" multiplier="1:1" id="kbe-bk-7Yg"/>
+                    </constraints>
+                    <state key="normal" image="icons8-circled_chevron_left">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="previous:" destination="iN0-l3-epB" eventType="touchUpInside" id="hKs-YA-sQg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cy-OR-cAv">
+                    <rect key="frame" x="328" y="27" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="4cy-OR-cAv" secondAttribute="height" multiplier="1:1" id="3cx-vG-OuQ"/>
+                    </constraints>
+                    <state key="normal" image="icons8-circled_chevron_right">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="next:" destination="iN0-l3-epB" eventType="touchUpInside" id="JhU-4U-X4p"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Di1-He-OMt">
+                    <rect key="frame" x="76" y="45" width="232" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4cy-OR-cAv" secondAttribute="trailing" constant="20" id="1BO-zw-VFk"/>
+                <constraint firstItem="4cy-OR-cAv" firstAttribute="leading" secondItem="Di1-He-OMt" secondAttribute="trailing" constant="20" id="51c-Wb-6cw"/>
+                <constraint firstItem="Di1-He-OMt" firstAttribute="leading" secondItem="uHB-qP-3Bt" secondAttribute="trailing" constant="20" id="6if-d7-lpu"/>
+                <constraint firstItem="uHB-qP-3Bt" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.4" id="FfZ-Sd-aGT"/>
+                <constraint firstItem="Di1-He-OMt" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="IT5-a6-Jq2"/>
+                <constraint firstItem="uHB-qP-3Bt" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="SMA-69-8os"/>
+                <constraint firstItem="uHB-qP-3Bt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="edc-lH-eDb"/>
+                <constraint firstItem="4cy-OR-cAv" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.4" id="ewM-WH-3NU"/>
+                <constraint firstItem="4cy-OR-cAv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="zU6-yo-ue6"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="pageCount" destination="Di1-He-OMt" id="z4c-aT-rWc"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="-183.48214285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icons8-circled_chevron_left" width="25" height="25"/>
+        <image name="icons8-circled_chevron_right" width="25" height="25"/>
+    </resources>
+</document>

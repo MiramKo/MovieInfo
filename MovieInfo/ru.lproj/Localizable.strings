@@ -1,0 +1,33 @@
+/*
+  Localizabled.strings
+  MovieInfo
+
+  Created by Михаил Костров on 14/11/2019.
+  Copyright © 2019 Михаил Костров. All rights reserved.
+*/
+
+MENU_ALL = "Все фильмы";
+MENU_FAVORITES = "Любимые";
+MENU_UPCOMING = "Скоро в кинотеатрах";
+MENU_NOW_PLAYING = "Идут в кинотеатрах";
+FILTERS_SORT_TYPE = "Сортировать по:";
+popularity.desc = "Популярности";
+release_date.desc = "Дате выхода";
+vote_average.desc = "Рейтингу";
+SEARCHBAR_PLACEHOLDER = "Введите минимум 3 символа";
+RELEASE_DATE = "Дата выхода:";
+MOVIELIST_TITLE = "Фильмы";
+PAGE_COUNT = "Страница NN из PP";
+
+MOVIE_INFO_CELL_TITLE = "Название:";
+MOVIE_INFO_CELL_ORIGINAL_TITLE = "Оригинальное название:";
+MOVIE_INFO_CELL_RELEASE_DATE = "Дата выхода:";
+
+GENRES_CELL_TITLE = "Жанры:";
+
+OVERVIEW_CELL_TITL = "Описание:";
+
+LOADING_LABEL = "Загрузка...";
+
+GOOD_TEXT = "Отлично!";
+WILL_BE_SOON = "Данная функция будет доступна позже.";
