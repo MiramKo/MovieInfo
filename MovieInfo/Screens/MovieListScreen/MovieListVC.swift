@@ -49,14 +49,36 @@ class MovieListVC: UIViewController {
     }
     
     @objc func updateUI(){
+        self.checkData()
+    }
+    
+    private func checkData() {
         DispatchQueue.main.async {
-            self.viewModel.config(navigationItems: self.navigationItem)
-            self.tableView.reloadData()
-            self.configTitle()
-            if self.tableView.numberOfRows(inSection: 0) != 0 {
-                let indexPath = IndexPath(row: 0, section: 0)
-                self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+            if let error = MoviesManager.shared.getError() {
+                let title = NSLocalizedString("ERROR_TITLE", comment: "ERROR_TITLE")
+                let alert = UIAlertController(title: title + "\(error.code)", message: error.errorDescription, preferredStyle: .alert)
+                let bttnTitle = NSLocalizedString("ERROR_RETRY", comment: "ERROR_RETRY")
+                let alertAction = UIAlertAction(title: bttnTitle, style: .default, handler: self.retry(_:))
+                alert.addAction(alertAction)
+                
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                self.reloadData()
             }
+        }
+    }
+    
+    private func retry(_: UIAlertAction) {
+        MoviesManager.shared.prepareAtStart()
+    }
+    
+    private func reloadData() {
+        self.viewModel.config(navigationItems: self.navigationItem)
+        self.tableView.reloadData()
+        self.configTitle()
+        if self.tableView.numberOfRows(inSection: 0) != 0 {
+            let indexPath = IndexPath(row: 0, section: 0)
+            self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
         }
     }
     

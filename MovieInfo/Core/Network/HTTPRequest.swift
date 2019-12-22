@@ -24,16 +24,13 @@ class HTTPRequest {
                 let parameterString = self.stringFrom(parameters: parameters)
                 requestURL = URL(string: "\(url)?\(parameterString)")!
             } else {
-                
                 requestURL = URL(string: url)!
             }
 
             var request = URLRequest(url: requestURL)
             request.httpMethod = method
-            print(request.description)
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 if error != nil{
-                    print("Error -> \(error)")
                     completion(nil, nil, error)
                 }else{
                     completion(data, response, nil)

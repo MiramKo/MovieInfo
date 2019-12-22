@@ -26,14 +26,15 @@ class ConfigurationModel: BusinessModelProtocol {
     }
     
     
-    init (withData data: Data) {
+    init (withData data: Data) throws {
         do {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             let serialisedData = try decoder.decode(Configuration.self, from: data)
             self.write(config: serialisedData)
-        } catch let error {
-            print(error.localizedDescription)
+        } catch {
+            let error = MovieInfoError(.parseConfigsDataFail)
+            throw error
         }
     }
     

@@ -10,16 +10,20 @@ import Foundation
 
 class BusinessModelFabric {
     
-    public static func createModel(forAPI api: MDBAPIMethods, withData data: Data) -> BusinessModelProtocol {
-        switch api {
-        case .movieCertificationList:
-            return MovieCertificationListModel(withData: data)
-        case .genreList:
-            return GenresListModel(withData: data)
-        case .upcoming, .nowPlaying, .discover, .search:
-            return MovieListModel(withData: data)
-        case .configuration:
-            return ConfigurationModel(withData: data)
+    public static func createModel(forAPI api: MDBAPIMethods, withData data: Data) throws -> BusinessModelProtocol {
+        do {
+            switch api {
+            case .movieCertificationList:
+                return try MovieCertificationListModel(withData: data)
+            case .genreList:
+                return try GenresListModel(withData: data)
+            case .upcoming, .nowPlaying, .discover, .search:
+                return try MovieListModel(withData: data)
+            case .configuration:
+                return try ConfigurationModel(withData: data)
+            }
+        } catch let error {
+            throw error
         }
     }
 }

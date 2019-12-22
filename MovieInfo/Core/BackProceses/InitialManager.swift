@@ -11,6 +11,8 @@ import Foundation
 class InitialManager {
     
     private let defaults = UserDefaults.init()
+    private var configError: MovieInfoError?
+    private var genresError: MovieInfoError?
     
     private var prepareConfigs: Bool = false {
         didSet {
@@ -31,7 +33,14 @@ class InitialManager {
     }
     
     private func checkPreparations() {
-        NotificationCenter.default.post(name: .preparationsDone, object: nil)
+        if self.prepareConfigs && self.prepareGenres && self.prepareMovies {
+            self.defaults.set(true, forKey: "firstStartFlag")
+            NotificationCenter.default.post(name: .preparationsDone, object: nil)
+        }
+    }
+    
+    private func preparationsWithErrors() {
+        NotificationCenter.default.post(name: .preparationsFail, object: nil)
     }
     
     init() {
@@ -43,7 +52,22 @@ class InitialManager {
         self.prepareMovies = true
     }
     
+    public func getErrors() -> [MovieInfoError] {
+        var errors = [MovieInfoError]()
+        if let error = self.configError {
+            errors.append(error)
+        }
+        
+        if let error = self.genresError {
+            errors.append(error)
+        }
+        
+        return errors
+    }
+    
     public func prepare() {
+        self.genresError = nil
+        self.configError = nil
         MoviesManager.shared.prepareAtStart()
         self.firstStartCheck()
     }
@@ -56,21 +80,29 @@ class InitialManager {
         let firstStart = !self.defaults.bool(forKey: "firstStartFlag")
     
         if firstStart {
-            self.defaults.set(true, forKey: "firstStartFlag")
             let configaApi = MDBAPIFactory.getAPI(withType: .configuration)
-            configaApi.request() {_,_ in
-                self.prepareConfigs = true
-            }
-            
-            let genresApi = MDBAPIFactory.getAPI(withType: .genreList)
-            genresApi.request() { value, error in
-                self.prepareGenres = true
-                guard let value = value as? GenresListModel else { return }
-                DispatchQueue.main.async {
-                    CDGenre.makeOrUpdate(fromModel: value)
+            configaApi.request() { [weak self] value, error in
+                if let error = error {
+                    self?.configError = error
+                    self?.preparationsWithErrors()
+                }
+                else {
+                    self?.prepareConfigs = true
                 }
             }
             
+            let genresApi = MDBAPIFactory.getAPI(withType: .genreList)
+            genresApi.request() { [weak self] value, error in
+                if let error = error {
+                    self?.genresError = error
+                    self?.preparationsWithErrors()
+                }
+                else {
+                   self?.prepareGenres = true
+                    guard let value = value as? GenresListModel else { return }
+                    CDGenre.makeOrUpdate(fromModel: value)
+                }
+            }
         } else {
             self.checkConfigs()
             self.prepareGenres = true

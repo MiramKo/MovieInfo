@@ -16,6 +16,11 @@ class MoviesManager {
     private var choosenMode: MenuOptions = .all
     private var newDataInProcess = false
     private var choosenMovie: Movie? = nil
+    private var error: MovieInfoError?
+    
+    public func getError() -> MovieInfoError? {
+        return self.error
+    }
     
     public func prepareAtStart() {
         self.askforMovies(atPage: 1)
@@ -77,15 +82,30 @@ class MoviesManager {
                 return
         }
         api.request() { [weak self] (result, error) in
-            guard let movieList = result as? MovieListModel else { return }
+            guard let movieList = result as? MovieListModel
+                else {
+                    self?.movieList = nil
+                    self?.handleError(error)
+                    NotificationCenter.default.post(name: .newDataObtained, object: nil)
+                    return
+            }
+            self?.error = nil
             self?.movieList = movieList
             self?.newDataInProcess = false
             NotificationCenter.default.post(name: .newDataObtained, object: nil)
         }
     }
     
+    private func handleError(_ error: MovieInfoError?) {
+        guard let error = error
+        else {
+            self.error = MovieInfoError(.unknownError)
+            return
+        }
+        self.error = error
+    }
+    
     private func createApi(pageForRequest page: Int) -> MDBAPIPAbstractFactory? {
-        
         switch self.choosenMode {
         case .all:
             return MDBAPIFactory.getAPI(withType: .discover, forPage: page)
@@ -136,7 +156,6 @@ class MoviesManager {
         else {
             return
         }
-        
         CDMovie.makeCDMovie(fromMovie: movie)
     }
     

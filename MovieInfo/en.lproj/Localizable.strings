@@ -31,3 +31,11 @@ LOADING_LABEL = "Loading...";
 
 GOOD_TEXT = "Good!";
 WILL_BE_SOON = "This feature will be available later.";
+
+
+//Errors
+
+ERROR_TITLE = "Errors: ";
+ERROR_RETRY = "Retry";
+ERROR_7 = "Invalid API key. Contact the developer.";
+ERROR_34 = "The resource you requested could not be found.";

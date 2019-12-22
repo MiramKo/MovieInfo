@@ -22,13 +22,14 @@ class MovieCertificationListModel: BusinessModelProtocol {
     
     private var certifications: [String: [Certification]]? = nil
     
-    init (withData data: Data) {
+    init (withData data: Data) throws {
         
         do {
             let serialisedData = try JSONDecoder().decode(MovieCertificationList.self, from: data)
             self.certifications = serialisedData.certifications
-        } catch let error {
-            print(error.localizedDescription)
+        } catch {
+            let error = MovieInfoError(.parseCertificationListFail)
+            throw error
         }
     }
     

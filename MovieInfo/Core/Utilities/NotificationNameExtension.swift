@@ -11,5 +11,5 @@ import Foundation
 extension Notification.Name {
     static let newDataObtained = Notification.Name("newDataObtained")
     static let preparationsDone = Notification.Name("preparationsDone")
-
+    static let preparationsFail = Notification.Name("preparationsFail")
 }

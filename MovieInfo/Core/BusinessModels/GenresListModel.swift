@@ -21,12 +21,13 @@ class GenresListModel: BusinessModelProtocol {
     
     private var genres: [Genre]? = nil
     
-    init (withData data: Data) {
+    init (withData data: Data) throws {
         do {
             let serialisedData = try JSONDecoder().decode(Genres.self, from: data)
             self.genres = serialisedData.genres
-        } catch let error {
-            print(error.localizedDescription)
+        } catch {
+            let error = MovieInfoError(.parseGenresListDataFail)
+            throw error
         }
     }
     

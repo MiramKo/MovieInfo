@@ -21,7 +21,7 @@ class MovieListModel: BusinessModelProtocol {
     private var page = 0
     private var totalPages = 0
     
-    init(withData data: Data) {
+    init(withData data: Data) throws {
         do {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -29,8 +29,9 @@ class MovieListModel: BusinessModelProtocol {
             self.movies = serialisedData.results
             self.page = serialisedData.page
             self.totalPages = serialisedData.totalPages
-        } catch let error {
-            print(error.localizedDescription)
+        } catch {
+            let error = MovieInfoError(.parseMovieListDataFail)
+            throw error
         }
     }
 
