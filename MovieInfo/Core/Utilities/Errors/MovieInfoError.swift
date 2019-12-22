@@ -46,23 +46,23 @@ enum MovieInfoErrorType {
     var description: String {
         switch self {
         case .dataLoadFail:
-            return "Не удалось загрузить данные."
+            return NSLocalizedString("DATA_LOAD_FAIL", comment: "DATA_LOAD_FAIL")
         case .requestError:
-            return "Ошибка запроса."
+            return NSLocalizedString("REQUEST_ERROR", comment: "REQUEST_ERROR")
         case .statusParseError:
-            return "Не удалось обработать ответ сервера."
+            return NSLocalizedString("STATUS_PARSE_ERROR", comment: "STATUS_PARSE_ERROR")
         case .parseErrorDataFail:
-            return "Не удалось обработать данные."
+            return NSLocalizedString("PARSE_ERROR_DATA_FAIL", comment: "PARSE_ERROR_DATA_FAIL")
         case .parseConfigsDataFail:
-            return "Неудалось обработать данные по конфигурациям API."
+            return NSLocalizedString("PARSE_CONFIGS_DATA_FAIL", comment: "PARSE_CONFIGS_DATA_FAIL")
         case .parseMovieListDataFail:
-            return "Неудалось обработать данные со списком фильмов."
+            return NSLocalizedString("PARSE_MOVIE_LIST_DATA_FAIL", comment: "PARSE_MOVIE_LIST_DATA_FAIL")
         case .parseGenresListDataFail:
-            return "Неудалось обработать данные со списком жанров."
+            return NSLocalizedString("PARSE_GENRES_LIST_DATA_FAIL", comment: "PARSE_GENRES_LIST_DATA_FAIL")
         case .parseCertificationListFail:
-            return "Неудалось обработать данные со списком сертификации."
+            return NSLocalizedString("PARSE_CERTIFICATION_LIST_FAIL", comment: "PARSE_CERTIFICATION_LIST_FAIL")
         case .unknownError:
-            return "Неизвестная ошибка."
+            return NSLocalizedString("UNKNOWN_ERROR", comment: "UNKNOWN_ERROR")
         }
     }
 }
