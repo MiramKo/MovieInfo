@@ -10,8 +10,6 @@ import Foundation
 
 extension Notification.Name {
     static let newDataObtained = Notification.Name("newDataObtained")
-    static let firstStartConfReceived = Notification.Name("firstStartConfReceived")
-    static let firstStartGenresRecived = Notification.Name("firstStartGenresRecived")
     static let preparationsDone = Notification.Name("preparationsDone")
 
 }

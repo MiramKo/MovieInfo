@@ -9,7 +9,6 @@
 import Foundation
 
 enum MDBAPIMethods: String {
-    case guestSession = "/authentication/guest_session/new"
     case movieCertificationList = "/certification/movie/list"
     case genreList = "/genre/movie/list"
     case upcoming = "/movie/upcoming"

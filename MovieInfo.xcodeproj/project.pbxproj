@@ -68,17 +68,14 @@
 		89C20CFD237DC3A400DBFF47 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20CFC237DC3A400DBFF47 /* NotificationNameExtension.swift */; };
 		89C20D00237DE24E00DBFF47 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20CFF237DE24E00DBFF47 /* StringExtensions.swift */; };
 		89C20D04237DE9B200DBFF47 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20D03237DE9B200DBFF47 /* HTTPRequest.swift */; };
-		89C20D06237EE2F900DBFF47 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20D05237EE2F900DBFF47 /* SessionManager.swift */; };
 		89C20D0B237EE83200DBFF47 /* MovieInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20D0A237EE83200DBFF47 /* MovieInfoVC.swift */; };
 		89C20D0E237EE84F00DBFF47 /* MovieInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20D0D237EE84F00DBFF47 /* MovieInfoViewModel.swift */; };
 		89C20D10237EFBC800DBFF47 /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20D0F237EFBC800DBFF47 /* KeyChainManager.swift */; };
-		89C20D162380216C00DBFF47 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20D152380216C00DBFF47 /* SessionModel.swift */; };
 		89C20D18238021F400DBFF47 /* BusinessModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20D17238021F400DBFF47 /* BusinessModelProtocol.swift */; };
 		89C20D212380518500DBFF47 /* MDBAPIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20D202380518500DBFF47 /* MDBAPIFactory.swift */; };
 		89C20D232380521500DBFF47 /* MDBAPIPAbstractFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20D222380521500DBFF47 /* MDBAPIPAbstractFactory.swift */; };
 		89C20D292380607A00DBFF47 /* MDBAPIMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20D282380607A00DBFF47 /* MDBAPIMethods.swift */; };
 		89C20D2B238061DB00DBFF47 /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20D2A238061DB00DBFF47 /* HTTPMethods.swift */; };
-		89C20D2F2380838600DBFF47 /* GuestSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C20D2E2380838600DBFF47 /* GuestSession.swift */; };
 		89D3A0B523898B4E008F89C1 /* MovieListTableViewFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D3A0B423898B4E008F89C1 /* MovieListTableViewFooter.xib */; };
 		89D3A0B723898B81008F89C1 /* MovieListTableViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A0B623898B81008F89C1 /* MovieListTableViewFooter.swift */; };
 /* End PBXBuildFile section */
@@ -160,17 +157,14 @@
 		89C20CFC237DC3A400DBFF47 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 		89C20CFF237DE24E00DBFF47 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		89C20D03237DE9B200DBFF47 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
-		89C20D05237EE2F900DBFF47 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		89C20D0A237EE83200DBFF47 /* MovieInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoVC.swift; sourceTree = "<group>"; };
 		89C20D0D237EE84F00DBFF47 /* MovieInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoViewModel.swift; sourceTree = "<group>"; };
 		89C20D0F237EFBC800DBFF47 /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
-		89C20D152380216C00DBFF47 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
 		89C20D17238021F400DBFF47 /* BusinessModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessModelProtocol.swift; sourceTree = "<group>"; };
 		89C20D202380518500DBFF47 /* MDBAPIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDBAPIFactory.swift; sourceTree = "<group>"; };
 		89C20D222380521500DBFF47 /* MDBAPIPAbstractFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDBAPIPAbstractFactory.swift; sourceTree = "<group>"; };
 		89C20D282380607A00DBFF47 /* MDBAPIMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDBAPIMethods.swift; sourceTree = "<group>"; };
 		89C20D2A238061DB00DBFF47 /* HTTPMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
-		89C20D2E2380838600DBFF47 /* GuestSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestSession.swift; sourceTree = "<group>"; };
 		89D3A0B423898B4E008F89C1 /* MovieListTableViewFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListTableViewFooter.xib; sourceTree = "<group>"; };
 		89D3A0B623898B81008F89C1 /* MovieListTableViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewFooter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -374,7 +368,6 @@
 			children = (
 				8908C5D223A663950075255C /* ImageCash */,
 				89C20CCB237D2D9D00DBFF47 /* MoviesManager.swift */,
-				89C20D05237EE2F900DBFF47 /* SessionManager.swift */,
 				8912000C23884CC400D34EEC /* Filters.swift */,
 				8939F677238FE93600B1E7DF /* InitialManager.swift */,
 			);
@@ -472,7 +465,6 @@
 			children = (
 				89C20D17238021F400DBFF47 /* BusinessModelProtocol.swift */,
 				8912FFFC2388210000D34EEC /* BusinessModelFabric.swift */,
-				89C20D152380216C00DBFF47 /* SessionModel.swift */,
 				8912FFFA238819E600D34EEC /* MovieCertificationListModel.swift */,
 				891200002388317D00D34EEC /* GenresListModel.swift */,
 				891200042388424900D34EEC /* Movie.swift */,
@@ -496,7 +488,6 @@
 		89C20D2D2380835200DBFF47 /* MDBAPIClasses */ = {
 			isa = PBXGroup;
 			children = (
-				89C20D2E2380838600DBFF47 /* GuestSession.swift */,
 				8912FFF6238816D800D34EEC /* MovieCertificationList.swift */,
 				8912FFFE23882E8100D34EEC /* GenresList.swift */,
 				89120002238840EE00D34EEC /* Upcoming.swift */,
@@ -629,7 +620,6 @@
 			files = (
 				89C20CF8237D839000DBFF47 /* MenuAppearenceDelegate.swift in Sources */,
 				89C20D10237EFBC800DBFF47 /* KeyChainManager.swift in Sources */,
-				89C20D06237EE2F900DBFF47 /* SessionManager.swift in Sources */,
 				89C20D0E237EE84F00DBFF47 /* MovieInfoViewModel.swift in Sources */,
 				89C20CA0237D2BAE00DBFF47 /* AppDelegate.swift in Sources */,
 				8908C5CD23A41E160075255C /* UIImageExtension.swift in Sources */,
@@ -676,10 +666,8 @@
 				8939F67A238FEAAD00B1E7DF /* Configuration.swift in Sources */,
 				89C20CAA237D2BAE00DBFF47 /* MovieInfo.xcdatamodeld in Sources */,
 				89C20D212380518500DBFF47 /* MDBAPIFactory.swift in Sources */,
-				89C20D2F2380838600DBFF47 /* GuestSession.swift in Sources */,
 				8908C5F723AE3ECC0075255C /* OverviewCell.swift in Sources */,
 				89C20D04237DE9B200DBFF47 /* HTTPRequest.swift in Sources */,
-				89C20D162380216C00DBFF47 /* SessionModel.swift in Sources */,
 				89C20CA2237D2BAE00DBFF47 /* SceneDelegate.swift in Sources */,
 				8908C5F223AE29900075255C /* GenresCell.swift in Sources */,
 				89C20D00237DE24E00DBFF47 /* StringExtensions.swift in Sources */,

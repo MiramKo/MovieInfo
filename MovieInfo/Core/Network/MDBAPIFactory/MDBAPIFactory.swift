@@ -12,8 +12,6 @@ class MDBAPIFactory {
     
     public static func getAPI(withType type: MDBAPIMethods, forPage page: Int = 1) -> MDBAPIPAbstractFactory {
         switch type {
-        case .guestSession:
-            return GuestSession()
         case .movieCertificationList:
             return MovieCertificationList()
         case .genreList:

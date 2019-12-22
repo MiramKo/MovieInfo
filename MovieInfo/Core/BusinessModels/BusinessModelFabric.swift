@@ -12,8 +12,6 @@ class BusinessModelFabric {
     
     public static func createModel(forAPI api: MDBAPIMethods, withData data: Data) -> BusinessModelProtocol {
         switch api {
-        case .guestSession:
-            return SessionModel(withData: data)
         case .movieCertificationList:
             return MovieCertificationListModel(withData: data)
         case .genreList:
