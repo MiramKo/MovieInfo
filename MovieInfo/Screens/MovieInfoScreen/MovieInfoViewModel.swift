@@ -47,8 +47,11 @@ class MovieInfoViewModel {
     }
     
     public func config(header: CollectionHeader) {
-        header.backdrop.setImage(withAdress: self.movie.backdropPath, andType: .backdrop)
-        header.poster.setImage(withAdress: self.movie.posterPath, andType: .poster)
+        let backdropImageManager = ImageManager(forImageType: .backdrop, withAdress: self.movie.backdropPath ?? "")
+        let posterImageManager = ImageManager(forImageType: .poster, withAdress: self.movie.posterPath ?? "")
+        
+        backdropImageManager.setImage(forView: header.backdrop)
+        posterImageManager.setImage(forView: header.poster)
     }
     
     public func config(navigationItem item: UINavigationItem) -> Bool {

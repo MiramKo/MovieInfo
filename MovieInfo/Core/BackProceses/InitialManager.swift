@@ -50,8 +50,8 @@ class InitialManager {
     
     private func firstStartCheck() {
         
-        let imageManager = ImageManager()
-        imageManager.clearIfNeeded()
+        let cleaner = ImageCleaner()
+        cleaner.clearIfNeeded()
         
         let firstStart = !self.defaults.bool(forKey: "firstStartFlag")
     

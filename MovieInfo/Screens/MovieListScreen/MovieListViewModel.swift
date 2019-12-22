@@ -50,7 +50,9 @@ class MovieListViewModel {
         cell.title.text = movie.title
         cell.rating.text = "\(movie.voteAverage)/10"
         let imageAdress = movie.posterPath
-        cell.poster.setImage(withAdress: imageAdress, andType: .poster)
+        
+        let posterImageManager = ImageManager(forImageType: .poster, withAdress: imageAdress ?? "")
+        posterImageManager.setImage(forView: cell.poster)
     }
     
     public func config(table: UITableView) {
